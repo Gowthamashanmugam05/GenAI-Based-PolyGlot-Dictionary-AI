@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PolyGlot Dictionary AI</title>
+    <link href="/static/css/styles.css" rel="stylesheet">
+</head>
+<body>
+    
+    <div class="cursor"></div>
+    <div class="container">
+        
+        <div class="leftside">  
+            <div class="leftcontent">
+        
+                <img class="logo" src="/static/src/logo.png" alt="Logo">
+                <hr class="line">
+                <form method="POST">
+
+                    <label for="word" class="text1">Word to Translate</label>
+
+                   <input type="text" id="word" name="word" class="textbox1" placeholder="Type..." required />
+                
+                    
+                    <label for="language" class="text2">Choose Translate Language</label>
+
+                    <select id="language" name="language" class="textbox2" required>
+                        {% for lang in languages %}
+                            <option value="{{ lang }}">{{ lang.capitalize() }}</option>
+                        {% endfor %}
+                    </select>
+
+                    <div class="outer">
+                        <button id="translateButton" class="btn-hover color-7" type="submit">
+                            <div class="text" >Translate by AI</div>
+                        </button>
+                    </div>
+                </form>
+                <span class="powerby">Powered by</span>
+                <img class="footer" src="/static/src/sparkeits.png" alt="Powered by">
+                  
+                  
+            </div>
+        </div>
+        <div class="rightside">
+            <div class="rightcontent">
+                
+                <div class="profile">
+                    <div class="img-box">
+
+                        <img src="/static/src/profile.png" class="image">
+
+                    </div>
+                </div>
+
+                
+                <div id="outputArea" class="translation-output">
+                    <div class="outputtext"></div>
+                
+                </div>
+                
+
+                <div class="dis">
+                    <span>PolyGlot Dictionary AI may make mistakes. Check important info.</span>
+                </div>
+
+                        </div>
+        </div>
+    </div>
+    <script src="/static/js/scripts.js"></script>
+</body>
+</html>
